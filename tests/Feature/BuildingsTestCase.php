@@ -17,25 +17,34 @@ class BuildingsTestCase extends TestCase
         $this->api = Studio360::buildings();
     }
 
-    public function testListBuildings(): void
+    public function testListBuildings(): int
     {
         try {
             $response = $this->api->list();
             $this->assertSame(200, $response->getStatusCode());
-            dump($response);
+
+            $firstBuildingId = $response->getData()[0]->getId();
+
+            return $firstBuildingId;
         } catch (Studio360RequestException $exception) {
             dump($exception);
         }
     }
 
-    public function testFindBuilding(): void
+    /**
+     * @depends testListBuildings
+     */
+    public function testFindBuilding(int $firstBuildingId): void
     {
+        
         try {
-            $response = $this->api->find(207);
+            $response = $this->api->find($firstBuildingId);
+            
             $this->assertSame(200, $response->getStatusCode());
+            
             dump($response);
         } catch (Studio360RequestException $exception) {
-            dump($exception);
+            dump($exception->getMessage());
         }
     }
 
