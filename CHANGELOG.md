@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.4](https://github.com/jetimob/studio360-sdk-php-laravel/compare/v2.5.3...v2.5.4) (2022-08-23)
+
+
+### Bug Fixes
+
+* pega o id de um prédio existente na lista de prédios consultada previamente ([6ed14ec](https://github.com/jetimob/studio360-sdk-php-laravel/commit/6ed14ecdcf81cba4f90088c65bdaff363382bbc6))
+
 ### [2.5.3](https://github.com/jetimob/studio360-sdk-php-laravel/compare/v2.5.2...v2.5.3) (2022-06-03)
 
 ### [2.5.2](https://github.com/jetimob/studio360-sdk-php-laravel/compare/v2.5.1...v2.5.2) (2022-05-18)
