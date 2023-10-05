@@ -11,7 +11,7 @@ class ConstructionCompany
     protected ?string $title = null;
     protected ?string $whatsapp = null;
     protected ?string $instagram = null;
-    protected ?array $business_contacts = null;
+    protected ?array $businessContacts = null;
     protected ?string $description = null;
     protected Logo $logo;
 
@@ -82,17 +82,17 @@ class ConstructionCompany
      */
     public function getBusinessContacts(): ?array
     {
-        return $this->business_contacts;
+        return $this->businessContacts;
     }
 
     /**
-     * @param array|null $business_contacts
+     * @param array|null $businessContacts
      *
      * @return ConstructionCompany
      */
-    public function setBusinessContacts(?array $business_contacts): ConstructionCompany
+    public function setBusinessContacts(?array $businessContacts): ConstructionCompany
     {
-        $this->business_contacts = $business_contacts;
+        $this->businessContacts = $businessContacts;
         return $this;
     }
 
@@ -141,7 +141,7 @@ class ConstructionCompany
         ?string $whatsapp,
         ?string $instagram,
         ?string $description,
-        ?array $business_contacts,
+        ?array $businessContacts,
         Logo $logo
     )
     : self {
@@ -150,7 +150,7 @@ class ConstructionCompany
             ->setWhatsapp($whatsapp)
             ->setInstagram($instagram)
             ->setDescription($description)
-            ->setBusinessContacts($business_contacts)
+            ->setBusinessContacts($businessContacts)
             ->setLogo($logo);
     }
 }

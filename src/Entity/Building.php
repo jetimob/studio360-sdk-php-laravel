@@ -10,18 +10,17 @@ class Building
 
     protected int $id;
     protected ?string $title;
-    protected ?string $incorporation_registration;
+    protected ?string $incorporationRegistration;
     protected ?string $type;
-    protected ?int $enterprise_status;
     protected ?bool $rent;
     protected ?array $gallery;
     protected ?array $video;
-    protected ?array $tour_360;
-    protected ?string $rental_value;
+    protected ?array $tour360;
+    protected ?string $rentalValue;
     protected Address $address;
-    protected ?string $text_address;
-    protected Cover $cover;
-    protected Features $features;
+    protected ?string $textAddress;
+    protected ?array $cover;
+    protected ?array $features;
 
     public function galleryItemType(): string
     {
@@ -36,6 +35,16 @@ class Building
     public function tour360ItemType(): string
     {
         return Video::class;
+    }
+
+    public function featuresItemType(): string
+    {
+        return Features::class;
+    }
+
+    public function coverItemType(): string
+    {
+        return Cover::class;
     }
 
     /**
@@ -119,17 +128,17 @@ class Building
      */
     public function getTour360(): ?array
     {
-        return $this->tour_360;
+        return $this->tour360;
     }
 
     /**
-     * @param array|null $tour_360
+     * @param array|null $tour360
      *
      * @return Building
      */
-    public function setTour360(?array $tour_360): Building
+    public function setTour360(?array $tour360): Building
     {
-        $this->tour_360 = $tour_360;
+        $this->tour360 = $tour360;
         return $this;
     }
 
@@ -157,24 +166,24 @@ class Building
      */
     public function getTextAddress(): ?string
     {
-        return $this->text_address;
+        return $this->textAddress;
     }
 
     /**
-     * @param string|null $text_address
+     * @param string|null $textAddress
      *
      * @return Building
      */
-    public function setTextAddress(?string $text_address): Building
+    public function setTextAddress(?string $textAddress): Building
     {
-        $this->text_address = $text_address;
+        $this->textAddress = $textAddress;
         return $this;
     }
 
     /**
-     * @return Cover|null
+     * @return array|null
      */
-    public function getCover(): ?Cover
+    public function getCover(): ?array
     {
         return $this->cover ?? null;
     }
@@ -191,19 +200,18 @@ class Building
     }
 
     /**
-     * @return Features
+     * @return ?array
      */
-    public function getFeatures(): Features
+    public function getFeatures(): ?array
     {
         return $this->features;
     }
 
     /**
-     * @param Features $features
-     *
+     * @param array|null $features
      * @return Building
      */
-    public function setFeatures(Features $features): Building
+    public function setFeatures(?array $features): Building
     {
         $this->features = $features;
         return $this;
@@ -225,25 +233,6 @@ class Building
     public function setType(?string $type): Building
     {
         $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getEnterpriseStatus(): ?int
-    {
-        return $this->enterprise_status;
-    }
-
-    /**
-     * @param int|null $enterprise_status
-     *
-     * @return Building
-     */
-    public function setEnterpriseStatus(?int $enterprise_status): Building
-    {
-        $this->enterprise_status = $enterprise_status;
         return $this;
     }
 
@@ -271,7 +260,7 @@ class Building
      */
     public function getIncorporationRegistration(): ?string
     {
-        return $this->incorporation_registration;
+        return $this->incorporationRegistration;
     }
 
     /**
@@ -279,6 +268,6 @@ class Building
      */
     public function getRentalValue(): ?string
     {
-        return $this->rental_value;
+        return $this->rentalValue;
     }
 }

@@ -8,11 +8,11 @@ class Address
 {
     use Serializable;
 
-    protected ?string $street_name;
-    protected ?string $street_number;
+    protected ?string $streetName;
+    protected ?string $streetNumber;
     protected ?string $neighborhood;
     protected ?string $complement = null;
-    protected ?string $zip_code;
+    protected ?string $zipCode;
     protected ?string $city;
     protected ?string $state;
     protected ?string $country;
@@ -24,17 +24,17 @@ class Address
      */
     public function getStreetName(): ?string
     {
-        return $this->street_name;
+        return $this->streetName;
     }
 
     /**
-     * @param string|null $street_name
+     * @param string|null $streetName
      *
      * @return Address
      */
-    public function setStreetName(?string $street_name): Address
+    public function setStreetName(?string $streetName): Address
     {
-        $this->street_name = $street_name;
+        $this->streetName = $streetName;
         return $this;
     }
 
@@ -43,17 +43,17 @@ class Address
      */
     public function getStreetNumber(): ?string
     {
-        return $this->street_number;
+        return $this->streetNumber;
     }
 
     /**
-     * @param string|null $street_number
+     * @param string|null $streetNumber
      *
      * @return Address
      */
-    public function setStreetNumber(?string $street_number): Address
+    public function setStreetNumber(?string $streetNumber): Address
     {
-        $this->street_number = $street_number;
+        $this->streetNumber = $streetNumber;
         return $this;
     }
 
@@ -100,17 +100,17 @@ class Address
      */
     public function getZipCode(): ?string
     {
-        return $this->zip_code;
+        return $this->zipCode;
     }
 
     /**
-     * @param string|null $zip_code
+     * @param string|null $zipCode
      *
      * @return Address
      */
-    public function setZipCode(?string $zip_code): Address
+    public function setZipCode(?string $zipCode): Address
     {
-        $this->zip_code = $zip_code;
+        $this->zipCode = $zipCode;
         return $this;
     }
 
@@ -210,11 +210,11 @@ class Address
     }
 
     public function new(
-        ?string $street_name,
-        ?string $street_number,
+        ?string $streetName,
+        ?string $streetNumber,
         ?string $neighborhood,
         ?string $complement,
-        ?string $zip_code,
+        ?string $zipCode,
         ?string $city,
         ?string $state,
         ?string $country,
@@ -222,11 +222,11 @@ class Address
         ?string $longitude
     ): self {
         return (new static())
-            ->setStreetName($street_name)
-            ->setStreetNumber($street_number)
+            ->setStreetName($streetName)
+            ->setStreetNumber($streetNumber)
             ->setNeighborhood($neighborhood)
             ->setComplement($complement)
-            ->setZipCode($zip_code)
+            ->setZipCode($zipCode)
             ->setCity($city)
             ->setState($state)
             ->setCountry($country)
