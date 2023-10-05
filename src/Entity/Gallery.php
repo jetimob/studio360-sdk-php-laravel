@@ -8,13 +8,7 @@ class Gallery
 {
     use Serializable;
 
-    protected ?string $title;
-    protected ?array $files;
-
-    public function filesItemType(): string
-    {
-        return GalleryFiles::class;
-    }
+    protected ?string $files = null;
 
     /**
      * @return string|null
@@ -25,9 +19,9 @@ class Gallery
     }
 
     /**
-     * @return array|null
+     * @return string|null
      */
-    public function getFiles(): ?array
+    public function getFiles(): ?string
     {
         return $this->files;
     }

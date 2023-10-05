@@ -4,7 +4,7 @@ namespace Jetimob\Studio360\Entity;
 
 use Jetimob\Http\Traits\Serializable;
 
-class Features
+class FeaturesTags
 {
     use Serializable;
 
@@ -18,10 +18,5 @@ class Features
     public function setTag(?string $tag): void
     {
         $this->tag = $tag;
-    }
-
-    public function featuresTagsItemType(): string
-    {
-        return FeaturesTags::class;
     }
 }

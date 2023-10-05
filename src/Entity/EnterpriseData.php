@@ -13,11 +13,11 @@ class EnterpriseData
     protected ?string $description = null;
     protected ?string $status;
     protected ?string $deleted;
-    protected ?string $address_display_type;
+    protected ?string $addressDisplayType;
     protected ?array $unit;
     protected Building $building;
-    protected ConstructionCompany $construction_company;
-    protected ?string $last_updated_at;
+    protected ConstructionCompany $constructionCompany;
+    protected ?string $lastUpdatedAt;
 
     public function unitItemType(): string
     {
@@ -69,7 +69,7 @@ class EnterpriseData
      */
     public function getAddressDisplayType(): ?string
     {
-        return $this->address_display_type;
+        return $this->addressDisplayType;
     }
 
     /**
@@ -93,7 +93,7 @@ class EnterpriseData
      */
     public function getConstructionCompany(): ConstructionCompany
     {
-        return $this->construction_company;
+        return $this->constructionCompany;
     }
 
     /**
@@ -101,7 +101,7 @@ class EnterpriseData
      */
     public function getLastUpdatedAt(): ?string
     {
-        return $this->last_updated_at;
+        return $this->lastUpdatedAt;
     }
 
     /**
@@ -160,13 +160,13 @@ class EnterpriseData
     }
 
     /**
-     * @param string|null $address_display_type
+     * @param string|null $addressDisplayType
      *
      * @return EnterpriseData
      */
-    public function setAddressDisplayType(?string $address_display_type): EnterpriseData
+    public function setAddressDisplayType(?string $addressDisplayType): EnterpriseData
     {
-        $this->address_display_type = $address_display_type;
+        $this->addressDisplayType = $addressDisplayType;
         return $this;
     }
 
@@ -193,24 +193,24 @@ class EnterpriseData
     }
 
     /**
-     * @param ConstructionCompany $construction_company
+     * @param ConstructionCompany $constructionCompany
      *
      * @return EnterpriseData
      */
-    public function setConstructionCompany(ConstructionCompany $construction_company): EnterpriseData
+    public function setConstructionCompany(ConstructionCompany $constructionCompany): EnterpriseData
     {
-        $this->construction_company = $construction_company;
+        $this->constructionCompany = $constructionCompany;
         return $this;
     }
 
     /**
-     * @param string|null $last_updated_at
+     * @param string|null $lastUpdatedAt
      *
      * @return EnterpriseData
      */
-    public function setLastUpdatedAt(?string $last_updated_at): EnterpriseData
+    public function setLastUpdatedAt(?string $lastUpdatedAt): EnterpriseData
     {
-        $this->last_updated_at = $last_updated_at;
+        $this->lastUpdatedAt = $lastUpdatedAt;
         return $this;
     }
 
@@ -220,11 +220,11 @@ class EnterpriseData
         ?string $description,
         ?string $status,
         ?string $deleted,
-        ?string $address_display_type,
+        ?string $addressDisplayType,
         ?array $unit,
         Building $building,
-        ConstructionCompany $construction_company,
-        ?string $last_updated_at
+        ConstructionCompany $constructionCompany,
+        ?string $lastUpdatedAt
     ): self
     {
         return (new static())
@@ -233,10 +233,10 @@ class EnterpriseData
             ->setDescription($description)
             ->setStatus($status)
             ->setDeleted($deleted)
-            ->setAddressDisplayType($address_display_type)
+            ->setAddressDisplayType($addressDisplayType)
             ->setUnit($unit)
             ->setBuilding($building)
-            ->setConstructionCompany($construction_company)
-            ->setLastUpdatedAt($last_updated_at);
+            ->setConstructionCompany($constructionCompany)
+            ->setLastUpdatedAt($lastUpdatedAt);
     }
 }

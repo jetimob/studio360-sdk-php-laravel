@@ -7,15 +7,18 @@ use Jetimob\Studio360\Api\AbstractApi;
 
 class BuildingsApi extends AbstractApi
 {
-    public function list(int $page = 1): BuildingsResponse
+    public function list(int $limit, int $page = 1): BuildingsResponse
     {
-        return $this->mappedGet('empreendimentos', BuildingsResponse::class, [
-            RequestOptions::QUERY => ['page' => $page],
+        return $this->mappedGet('enterprises-expanded', BuildingsResponse::class, [
+            RequestOptions::QUERY => [
+                'limit' => $limit,
+                'page' => $page
+            ],
         ]);
     }
 
-    public function find(int $buildingId): BuildingResponse
+    public function find(int $enterpriseID, int $condominiumId): BuildingResponse
     {
-        return $this->mappedGet("empreendimento/$buildingId", BuildingResponse::class);
+        return $this->mappedGet("enterprise/$enterpriseID/$condominiumId", BuildingResponse::class);
     }
 }

@@ -11,16 +11,16 @@ class Unit
     protected int $id;
     protected ?string $title = null;
     protected ?string $price;
-    protected ?int $bathroom;
+    protected ?int $bathrooms;
     protected ?string $type;
     protected ?int $dorms;
     protected ?int $suites;
-    protected ?int $parking_spaces = null;
-    protected ?string $util_area;
-    protected ?string $private_area;
-    protected ?string $total_area;
-    protected ?string $ground_area;
-    protected ?string $rental_value = null;
+    protected ?int $parkingSpaces = null;
+    protected ?string $utilArea = null;
+    protected ?string $privateArea;
+    protected ?string $totalArea;
+    protected ?string $groundArea = null;
+    protected ?string $rentalValue = null;
     protected ?string $deleted;
 
     /**
@@ -44,7 +44,7 @@ class Unit
      */
     public function getRentalValue(): ?string
     {
-        return $this->rental_value;
+        return $this->rentalValue;
     }
 
     /**
@@ -52,7 +52,7 @@ class Unit
      */
     public function getGroundArea(): ?string
     {
-        return $this->ground_area;
+        return $this->groundArea;
     }
 
     /**
@@ -84,7 +84,7 @@ class Unit
      */
     public function getParkingSpaces(): ?int
     {
-        return $this->parking_spaces;
+        return $this->parkingSpaces;
     }
 
     /**
@@ -108,7 +108,7 @@ class Unit
      */
     public function getPrivateArea(): ?string
     {
-        return $this->private_area;
+        return $this->privateArea;
     }
 
     /**
@@ -116,7 +116,7 @@ class Unit
      */
     public function getTotalArea(): ?string
     {
-        return $this->total_area;
+        return $this->totalArea;
     }
 
     /**
@@ -153,13 +153,13 @@ class Unit
     }
 
     /**
-     * @param int|null $parking_spaces
+     * @param int|null $parkingSpaces
      *
      * @return Unit
      */
-    public function setParkingSpaces(?int $parking_spaces): Unit
+    public function setParkingSpaces(?int $parkingSpaces): Unit
     {
-        $this->parking_spaces = $parking_spaces;
+        $this->parkingSpaces = $parkingSpaces;
         return $this;
     }
 
@@ -186,24 +186,24 @@ class Unit
     }
 
     /**
-     * @param string|null $private_area
+     * @param string|null $privateArea
      *
      * @return Unit
      */
-    public function setPrivateArea(?string $private_area): Unit
+    public function setPrivateArea(?string $privateArea): Unit
     {
-        $this->private_area = $private_area;
+        $this->privateArea = $privateArea;
         return $this;
     }
 
     /**
-     * @param string|null $total_area
+     * @param string|null $totalArea
      *
      * @return Unit
      */
-    public function setTotalArea(?string $total_area): Unit
+    public function setTotalArea(?string $totalArea): Unit
     {
-        $this->total_area = $total_area;
+        $this->totalArea = $totalArea;
         return $this;
     }
 
@@ -212,17 +212,17 @@ class Unit
      */
     public function getBathroom(): ?int
     {
-        return $this->bathroom;
+        return $this->bathrooms;
     }
 
     /**
-     * @param int|null $bathroom
+     * @param int|null $bathrooms
      *
      * @return Unit
      */
-    public function setBathroom(?int $bathroom): Unit
+    public function setBathroom(?int $bathrooms): Unit
     {
-        $this->bathroom = $bathroom;
+        $this->bathrooms = $bathrooms;
         return $this;
     }
 
@@ -250,17 +250,17 @@ class Unit
      */
     public function getUtilArea(): ?string
     {
-        return $this->util_area;
+        return $this->utilArea;
     }
 
     /**
-     * @param string|null $util_area
+     * @param string|null $utilArea
      *
      * @return Unit
      */
-    public function setUtilArea(?string $util_area): Unit
+    public function setUtilArea(?string $utilArea): Unit
     {
-        $this->util_area = $util_area;
+        $this->utilArea = $utilArea;
         return $this;
     }
 }

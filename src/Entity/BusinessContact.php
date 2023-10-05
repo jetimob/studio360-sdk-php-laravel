@@ -9,7 +9,7 @@ class BusinessContact
     use Serializable;
 
     protected ?string $responsible;
-    protected ?string $phone_number;
+    protected ?string $phoneNumber;
 
     /**
      * @return string|null
@@ -35,24 +35,24 @@ class BusinessContact
      */
     public function getPhoneNumber(): ?string
     {
-        return $this->phone_number;
+        return $this->phoneNumber;
     }
 
     /**
-     * @param string|null $phone_number
+     * @param string|null $phoneNumber
      *
      * @return BusinessContact
      */
-    public function setPhoneNumber(?string $phone_number): BusinessContact
+    public function setPhoneNumber(?string $phoneNumber): BusinessContact
     {
-        $this->phone_number = $phone_number;
+        $this->phoneNumber = $phoneNumber;
         return $this;
     }
 
-    public function new(?string $responsible, ?string $phone_number): self
+    public function new(?string $responsible, ?string $phoneNumber): self
     {
         return (new static())
             ->setResponsible($responsible)
-            ->setPhoneNumber($phone_number);
+            ->setPhoneNumber($phoneNumber);
     }
 }
