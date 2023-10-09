@@ -16,7 +16,7 @@ return [
 
         // guzzle configuration, given to Guzzle instance as is
         'guzzle' => [
-            'base_uri' => env( 'STUDIO360_BASE_URI', 'https://studio360.app/api/integracao/jetimob/'),
+            'base_uri' => env( 'STUDIO360_BASE_URI', 'https://api-integration.studio360.app/v1/'),
 
             // Number of seconds to wait while trying to connect to a server. 0 waits indefinitely.
             'connect_timeout' => 0.0,
