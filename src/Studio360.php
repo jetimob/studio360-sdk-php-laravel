@@ -5,6 +5,7 @@ namespace Jetimob\Studio360;
 use Jetimob\Http\Contracts\HttpProviderContract;
 use Jetimob\Http\Http;
 use Jetimob\Studio360\Api\Buildings\BuildingsApi;
+use Jetimob\Studio360\Enums\VersionApi;
 
 class Studio360 implements HttpProviderContract
 {
@@ -38,8 +39,8 @@ class Studio360 implements HttpProviderContract
         return $this->client;
     }
 
-    public function buildings(): BuildingsApi
+    public function buildings(VersionApi $version = VersionApi::V4): BuildingsApi
     {
-        return new BuildingsApi($this);
+        return new BuildingsApi($this, $version);
     }
 }

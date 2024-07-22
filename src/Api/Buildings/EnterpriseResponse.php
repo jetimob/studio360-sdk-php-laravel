@@ -5,7 +5,7 @@ namespace Jetimob\Studio360\Api\Buildings;
 use Jetimob\Studio360\Api\Studio360Response;
 use Jetimob\Studio360\Entity\EnterpriseData;
 
-class BuildingResponse extends Studio360Response
+class EnterpriseResponse extends Studio360Response
 {
     protected ?EnterpriseData $data;
 
