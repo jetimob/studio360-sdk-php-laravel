@@ -16,12 +16,14 @@ class EnterpriseData
     protected ?string $lastUpdatedAt;
     protected ?string $addressDisplayType;
     protected ?string $status;
+    protected ?array $unit;
     protected ConstructionCompany $constructionCompany;
     protected Building $building;
-    /**
-     * @var array<Unit>
-     */
-    protected ?array $unit = [];
+
+    public function unitItemType(): string
+    {
+        return Unit::class;
+    }
 
     public function getId(): int
     {
@@ -153,6 +155,7 @@ class EnterpriseData
         ?string $lastUpdatedAt,
         ?string $addressDisplayType,
         ?string $status,
+        ?array $unit,
         ConstructionCompany $constructionCompany,
         Building $building
     ): self
@@ -165,6 +168,7 @@ class EnterpriseData
             ->setDeleted($deleted)
             ->setLastUpdatedAt($lastUpdatedAt)
             ->setAddressDisplayType($addressDisplayType)
+            ->setUnit($unit)
             ->setStatus($status)
             ->setConstructionCompany($constructionCompany)
             ->setBuilding($building);
