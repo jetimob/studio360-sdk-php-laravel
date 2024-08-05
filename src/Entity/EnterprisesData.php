@@ -19,15 +19,6 @@ class EnterprisesData
     protected ?string $status;
     protected ConstructionCompany $constructionCompany;
 
-    // protected ?string $addressDisplayType;
-    // protected ?array $unit;
-    // protected Building $building;
-
-    // public function unitItemType(): string
-    // {
-    //     return Unit::class;
-    // }
-
     /**
      * @return int
      */
@@ -107,30 +98,6 @@ class EnterprisesData
     {
         return $this->constructionCompany;
     }
-
-    /**
-     * @return string|null
-     */
-    // public function getAddressDisplayType(): ?string
-    // {
-    //     return $this->addressDisplayType;
-    // }
-
-    /**
-     * @return array|null
-     */
-    // public function getUnit(): ?array
-    // {
-    //     return $this->unit;
-    // }
-
-    /**
-     * @return Building
-     */
-    // public function getBuilding(): Building
-    // {
-    //     return $this->building;
-    // }
 
     /**
      * @param int $enterpriseId
@@ -241,39 +208,6 @@ class EnterprisesData
         $this->constructionCompany = $constructionCompany;
         return $this;
     }
-
-    /**
-     * @param string|null $addressDisplayType
-     *
-     * @return EnterprisesData
-     */
-    // public function setAddressDisplayType(?string $addressDisplayType): EnterprisesData
-    // {
-    //     $this->addressDisplayType = $addressDisplayType;
-    //     return $this;
-    // }
-
-    /**
-     * @param array|null $unit
-     *
-     * @return EnterprisesData
-     */
-    // public function setUnit(?array $unit): EnterprisesData
-    // {
-    //     $this->unit = $unit;
-    //     return $this;
-    // }
-
-    /**
-     * @param Building $building
-     *
-     * @return EnterprisesData
-     */
-    // public function setBuilding(Building $building): EnterprisesData
-    // {
-    //     $this->building = $building;
-    //     return $this;
-    // }
 
     public static function new(
         int $enterpriseId,
