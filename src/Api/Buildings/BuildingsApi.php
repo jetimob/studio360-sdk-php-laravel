@@ -22,7 +22,7 @@ class BuildingsApi extends AbstractApi
         return $this->versionApi;
     }
 
-    public function list(int $limit, int $page = 1): EnterprisesExpandedResponse | EnterprisesResponse
+    public function list(int $limit = 10, int $page = 1): EnterprisesExpandedResponse | EnterprisesResponse
     {
         if ($this->versionApi === VersionApi::V5) {
             return $this->mappedGet('enterprises', EnterprisesResponse::class, [
