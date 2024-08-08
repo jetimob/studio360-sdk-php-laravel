@@ -37,6 +37,16 @@ Algumas configurações são obrigatórias e únicas:
 
 - authorization_header_bearer_token
 
+## Testes
+
+Este SDK esta com cobertura de testes unitário e integração.
+
+Para executar os testes
+
+```
+./vendor/bin/phpunit
+```
+
 ## Licença
 
 studio360-sdk-php-laravel está licenciado sob [The MIT License (MIT)](LICENSE).

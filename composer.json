@@ -1,5 +1,6 @@
 {
     "name": "jetimob/studio360-sdk-php-laravel",
+    "version": "v5.0.0",
     "description": "Laravel SDK for Studio360's API",
     "keywords": ["sdk", "laravel", "php", "studio360"],
     "type": "library",

@@ -29,8 +29,11 @@ class Studio360PackageTest extends TestCase
         $this->cleanUp();
     }
 
-    /** @test */
-    public function installShouldCopyConfigFiles(): void
+    /**
+     * Teste para garantir o funcionando da instalação do arquivo de configuração
+     * do SDK caso não exista deve criar
+     */
+    public function testInstallShouldCopyConfigFiles(): void
     {
         $this->assertFileDoesNotExist($this->configPath);
 
@@ -42,8 +45,11 @@ class Studio360PackageTest extends TestCase
         unlink($this->configPath);
     }
 
-    /** @test */
-    public function existingFileCanBeOverwritten(): void
+    /**
+     * Teste para garantir o funcionando da instalação do arquivo de configuração
+     * do SDK caso já exista deve informar mensagem e não sobrescrever
+     */
+    public function testExistingFileCanBeOverwritten(): void
     {
         File::put($this->configPath, '');
         $this->assertFileExists($this->configPath);
@@ -53,8 +59,11 @@ class Studio360PackageTest extends TestCase
         $command->assertExitCode(0);
     }
 
-    /** @test */
-    public function existingFileShouldBeOverwritten(): void
+    /**
+     * Teste para garantir o funcionando da instalação do arquivo de configuração
+     * do SDK caso já exista deva sobrescrever
+     */
+    public function testExistingFileShouldBeOverwritten(): void
     {
         File::put($this->configPath, '');
         $this->assertFileExists($this->configPath);

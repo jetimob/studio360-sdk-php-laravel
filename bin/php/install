@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker compose run -it --rm --user=php php-fpm bash -c "bin/php/container/install"

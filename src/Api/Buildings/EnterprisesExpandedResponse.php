@@ -3,9 +3,9 @@
 namespace Jetimob\Studio360\Api\Buildings;
 
 use Jetimob\Studio360\Api\Studio360Response;
-use Jetimob\Studio360\Entity\EnterpriseData;
+use Jetimob\Studio360\Entity\EnterprisesExpandedData;
 
-class BuildingsResponse extends Studio360Response
+class EnterprisesExpandedResponse extends Studio360Response
 {
     protected int $total;
     protected int $perPage;
@@ -15,7 +15,7 @@ class BuildingsResponse extends Studio360Response
 
     public function dataItemType(): string
     {
-        return EnterpriseData::class;
+        return EnterprisesExpandedData::class;
     }
 
     /**

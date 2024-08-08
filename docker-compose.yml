@@ -1,0 +1,16 @@
+services:
+  php-fpm:
+    build:
+      context: docker/php8.2
+      args:
+        - USER_ID=1000
+    container_name: php_fpm_jetimob5_sdk
+    working_dir: /srv/app
+    volumes:
+      - ${PWD}:/srv/app/
+      - ${PWD}/docker/php8.2/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini
+      - ${PWD}/docker/php8.2/xdebug.ini:/etc/php/8.2/mods-available/xdebug.ini
+    extra_hosts:
+      - host:host-gateway
+    environment:
+      PHP_CS_FIXER_IGNORE_ENV: 1

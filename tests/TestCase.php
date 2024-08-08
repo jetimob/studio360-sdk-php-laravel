@@ -4,9 +4,12 @@ namespace Jetimob\Studio360\Tests;
 
 use Jetimob\Studio360\Studio360ServiceProvider;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    /** @inheritDoc */
+    /**
+     * Método para prover a injeção do Studio Service Provider
+     * nos testes de unidade e integração
+     */
     protected function getPackageProviders($app)
     {
         return [Studio360ServiceProvider::class];
